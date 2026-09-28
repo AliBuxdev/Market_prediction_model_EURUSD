@@ -1,0 +1,69 @@
+{
+  "best": {
+    "window": 48,
+    "d_model": 64,
+    "layers": 2,
+    "heads": 4,
+    "n_question_heads": 7,
+    "n_features": 22,
+    "decision_arch": {
+      "0_skip_close": "don't enter / close existing trade",
+      "1_hold": "hold; adjust SL (tighten/keep/widen) and TP (move_in/keep/extend)",
+      "2_enter": "open trade; set direction (long/short), SL level, TP level"
+    },
+    "sl_mults": {
+      "0": 0.75,
+      "1": 1.0,
+      "2": 1.5
+    },
+    "tp_mults": {
+      "0": 1.0,
+      "1": 1.5,
+      "2": 2.0
+    },
+    "perm": "block-bootstrap (block=24)",
+    "purge": {
+      "outer": 24,
+      "inner": 24
+    },
+    "thresholds": {
+      "action_conf": 0.55,
+      "dir_conf": 0.55
+    },
+    "features": [
+      "log_ret",
+      "high_pct",
+      "low_pct",
+      "vol_chg",
+      "momentum",
+      "volatility",
+      "range_pct",
+      "volume_zscore",
+      "atr_pct",
+      "dist_ma20",
+      "rsi14",
+      "rsi14_chg",
+      "dist_swing_high_20",
+      "dist_swing_high_50",
+      "dist_swing_low_20",
+      "dist_swing_low_50",
+      "breakout_up",
+      "breakout_down",
+      "dist_pivot",
+      "dist_r1",
+      "dist_s1",
+      "dist_round"
+    ]
+  },
+  "cv": 93,
+  "sharpe": -2.1604128528672057,
+  "pf": 0.8030113515432847,
+  "dd_pct": 28.22818791278625,
+  "win_rate": 0.3702416918429003,
+  "coverage": 0.1571364143464122,
+  "n_active_bars": 6620,
+  "cost_bps": 1.0,
+  "perm_pvalue": 0.3582089552238806,
+  "promoted": false,
+  "version": "jev-v7.2-d43c41eb"
+}
